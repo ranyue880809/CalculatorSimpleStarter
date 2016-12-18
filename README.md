@@ -10,4 +10,5 @@
 6. Redux is not used in this coding test.
 7. This repo is originally from other people's open source repo, I used it just for easier config for all the boilerplate code.
 8. The best brwoser to run this test is Chrome.
-9. the main logic is doCalculate function and clear function
+9. the main logic is doCalculate function and clear function.
+10. Open console when running this test, there's an object printed for tracking all the states.
