@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import Screen from './screen';
 var math = require('mathjs');
 
-const DeleteButton = ({clear}) => {
-	return (
-	  <div>
-        <div className="delete">
-          <div className="rec">REC</div>
-          <div onClick={clear} className="delete-button">C/AC</div>
+//below stateless component is ordered by the sequence of these component on UI.
+const Screen = ({value}) => {
+  return (
+      <div className="screen">
+        <div className="bottom">
+          {value}
         </div>
       </div>
-	)
+  );
+  
 }
 const Buttons = ({children}) => {
 	return (
@@ -18,6 +18,19 @@ const Buttons = ({children}) => {
       	{children}
       </div>
 	)
+}
+const DeleteButton = ({clear}) => {
+  return (
+    <div>
+        <div className="delete">
+          <div className="rec">REC</div>
+          <div onClick={clear} className="delete-button">C/AC</div>
+        </div>
+      </div>
+  )
+}
+const CreateRows = ({children}) => {
+  return <div>{children}</div>
 }
 const SinglelineButtons = ({row, click, buttonMap, operatorMap}) => {
 	const jsx = [];
@@ -34,9 +47,7 @@ const SinglelineButtons = ({row, click, buttonMap, operatorMap}) => {
       </div>
 	);
 }
-const CreateRows = ({children}) => {
-	return <div>{children}</div>
-}
+
 const GenerateRows = ({buttonMap, click, operatorMap}) => {
 	const rows = [];
 	for(var j = 0; j < buttonMap.length; j++){
@@ -44,6 +55,7 @@ const GenerateRows = ({buttonMap, click, operatorMap}) => {
 	}
 	return <div>{rows}</div>
 }
+
 export default class Calculator extends Component {
   constructor(props) {
     super(props);
